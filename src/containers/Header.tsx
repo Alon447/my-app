@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Button } from '@mui/material'
 import {
     DropdownMenu,
@@ -30,28 +30,40 @@ const Header = () => {
             clubs: ['צלסי', 'מנצסטר יונייטד', 'ליברפול'],
         },
     ]
+    const [SelectedIndex, setSelectedIndex] = React.useState(-1)
     return (
         <header className="bg-white-800 py-4">
-            <img src={logo}></img>
             <nav className="flex justify-center">
-                <ul className="flex space-x-4">
-                    {leagues.map((league) => (
-                        <li key={league.id}>
-                            <Button className="text-white">
-                                {league.name}
-                            </Button>
-                            <ul className=" bg-white-800">
-                                {league.clubs.map((club, index) => (
-                                    <li key={index} className="px-4 py-2">
-                                        <Button variant="text" color="inherit">
-                                            {club}
-                                        </Button>
-                                    </li>
-                                ))}
-                            </ul>
-                        </li>
-                    ))}
-                </ul>
+                <div className="flex justify-center">
+                    <a href="">
+                        <img src={logo}></img>
+                    </a>
+                    <div className="flex justify-center" id="">
+                        <ul className="flex justify-center">
+                            {leagues.map((league, index) => (
+                                <li
+                                    key={league.name}
+                                    onClick={() => setSelectedIndex(index)}
+                                >
+                                    <a
+                                        className={
+                                            SelectedIndex === index
+                                                ? 'nav-link active fw-bold'
+                                                : 'nav-link'
+                                        }
+                                        href="#"
+                                    >
+                                        {league.name}
+                                    </a>
+                                </li>
+                            ))}
+                        </ul>
+                        <form>
+                            <input></input>
+                            <button>Search</button>
+                        </form>
+                    </div>
+                </div>
             </nav>
         </header>
     )
