@@ -21,7 +21,7 @@ type Game = {
     nation: string
     price: number
 }
-const Tickets = ({ numberOfEvents, team }: TicketsProps) => {
+function Tickets({ numberOfEvents, team }: TicketsProps) {
     const games: Game[] = [
         {
             date: new Date('2024-04-20'),

@@ -7,7 +7,7 @@ import {
 } from '@radix-ui/react-dropdown-menu'
 import logo from '../images/tickets_logo.jpg'
 type league = { id: number; name: string; clubs: string[] }
-const Header = () => {
+function Header() {
     const leagues: league[] = [
         {
             id: 1,

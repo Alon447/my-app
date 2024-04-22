@@ -6,8 +6,8 @@ import Tickets from './containers/Tickets'
 function App() {
     return (
         <div className="App">
-            {/* <MainScreen></MainScreen> */}
-            <Tickets numberOfEvents={6} team="ריאל מדריד"></Tickets>
+            <MainScreen></MainScreen>
+            {/* <Tickets numberOfEvents={6} team="ריאל מדריד"></Tickets> */}
         </div>
     )
 }
